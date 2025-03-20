@@ -112,6 +112,20 @@
   .score-change {
     @apply animate-score-change;
   }
+
+  /* Animation for timer warning */
+  @keyframes pulse-warning {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  .pulse-warning {
+    animation: pulse-warning 1s infinite;
+  }
 }
 
 /* Glass morphism effects */
@@ -146,4 +160,32 @@
   .landscape-container {
     @apply flex flex-row h-screen w-screen;
   }
+}
+
+/* Pulse animation for timer warning */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Animation for active player indicator */
+@keyframes border-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(255, 255, 255, 0);
+  }
+}
+
+.border-pulse {
+  animation: border-pulse 2s infinite;
 }

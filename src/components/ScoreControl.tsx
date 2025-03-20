@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Plus, Minus } from "lucide-react";
+import { useSound } from '@/hooks/useSound';
 
 interface ScoreControlProps {
   score: number;
@@ -17,11 +18,13 @@ const ScoreControl = ({
   disabled 
 }: ScoreControlProps) => {
   const [animateScore, setAnimateScore] = useState(false);
+  const { playSound } = useSound();
 
   const handleIncrement = () => {
     if (disabled) return;
     setScore(score + 1);
     triggerAnimation();
+    playSound('score');
   };
 
   const handleDecrement = () => {

@@ -5,6 +5,7 @@ import PlayerSetup from '@/components/PlayerSetup';
 import GameSettings from '@/components/GameSettings';
 import { Button } from '@/components/ui/button';
 import { motion } from 'framer-motion';
+import { Settings } from 'lucide-react';
 
 const Index = () => {
   const navigate = useNavigate();
@@ -22,6 +23,10 @@ const Index = () => {
     });
   };
 
+  const goToSettings = () => {
+    navigate('/settings');
+  };
+
   return (
     <div className="min-h-screen w-full bg-gradient-to-br from-gray-50 to-gray-100 flex flex-col items-center justify-center p-4 sm:p-6">
       <div className="w-full max-w-md">
@@ -29,8 +34,16 @@ const Index = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="text-center mb-8"
+          className="text-center mb-8 relative"
         >
+          <Button 
+            variant="ghost" 
+            size="icon"
+            onClick={goToSettings}
+            className="absolute right-0 top-0"
+          >
+            <Settings size={20} />
+          </Button>
           <h1 className="text-4xl font-bold tracking-tight mb-2">Score Keeper</h1>
           <p className="text-gray-500">Track your game scores with style</p>
         </motion.div>
@@ -75,8 +88,9 @@ const Index = () => {
           <Button 
             variant="outline" 
             className="w-full py-6 text-lg"
+            onClick={goToSettings}
           >
-            View History
+            Settings
           </Button>
         </motion.div>
       </div>
