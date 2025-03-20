@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
@@ -15,7 +14,7 @@ import {
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { useSettings } from '@/contexts/SettingsContext';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Volume2, Clock, Vibrate, Paint } from 'lucide-react';
+import { ArrowLeft, Volume2, Clock, Vibrate, Palette } from 'lucide-react';
 import { toast } from "sonner";
 
 const Settings = () => {
@@ -162,7 +161,7 @@ const Settings = () => {
           className="card-subtle p-6 mb-6"
         >
           <div className="flex items-center gap-2 mb-4">
-            <Paint size={18} className="text-gray-600" />
+            <Palette size={18} className="text-gray-600" />
             <Label className="text-lg font-medium">Theme</Label>
           </div>
           
